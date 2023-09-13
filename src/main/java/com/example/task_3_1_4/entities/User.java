@@ -108,6 +108,10 @@ public class User implements UserDetails {
         this.username = username;
     }
 
+    public String getShortRole() {
+        return roles.toString().substring(1, roles.toString().length() - 1);
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles.stream().map(role ->
